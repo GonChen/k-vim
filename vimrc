@@ -657,8 +657,13 @@ endif
 set background=dark
 set t_Co=256
 
-colorscheme solarized
+" colorscheme solarized
 " colorscheme molokai
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
+" lightline
+" let g:lightline.colorscheme='onehalfdark'
+
 
 
 " 设置标记一列的背景颜色和数字一行颜色一致
@@ -675,7 +680,9 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
-map <c-u> :Ack<space>
+cnoreabbrev Ack Ack!
+noremap <Leader>a :Ack <cword><cr>
+noremap <c-u> :Ack!<space>
 set shellpipe=>
 
 set nocompatible
@@ -685,3 +692,4 @@ hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=
 "hi CtrlSpaceStatus   guifg=#839496 guibg=#002b36 gui=reverse term=reverse cterm=reverse ctermfg=12 ctermbg=8
 hi CtrlSpaceSelected guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=bold
 "hi CtrlSpaceSelected guifg=#586e75 guibg=#eee8d5 guisp=#839496 gui=reverse,bold ctermfg=10 ctermbg=7 cterm=reverse,bold
+set guifont=CamingoCode:h16
